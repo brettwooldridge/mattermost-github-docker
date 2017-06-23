@@ -1,12 +1,4 @@
-# Use phusion/baseimage as base image. To make your builds
-# reproducible, make sure you lock down to a specific version, not
-# to `latest`! See
-# https://github.com/phusion/baseimage-docker/blob/master/Changelog.md
-# for a list of version numbers.
-FROM phusion/baseimage:0.9.22
-
-# Use baseimage-docker's init system.
-CMD ["/sbin/my_init"]
+FROM ubuntu:xenial
 
 # Mattermost-github-docker instructions start -----------------
 
@@ -21,6 +13,8 @@ RUN git clone https://github.com/softdevteam/mattermost-github-integration /matt
 WORKDIR /mattermost-github
 
 RUN pip install -r requirements.txt
+
+COPY server.py server.py
 
 EXPOSE 5000
 
