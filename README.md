@@ -11,5 +11,5 @@ file from this project and place it there.  Edit as documented
 
 Run the docker using this command:
 ```
-docker run -d -e MGI_CONFIG_FILE=/config/config.py -v <path_to_config_directory>:/config brettwooldridge/mattermostgithub
+docker run -d -p 5000:5000 -e MGI_CONFIG_FILE=/config/config.py -v <path_to_config_directory>:/config brettwooldridge/mattermostgithub
 ```
