@@ -22,8 +22,6 @@ WORKDIR /mattermost-github
 
 RUN pip install -r requirements.txt
 
-COPY config.py mattermostgithub/config.py
-
 EXPOSE 5000
 
 ENTRYPOINT ["python", "server.py"]
